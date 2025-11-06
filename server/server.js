@@ -22,10 +22,10 @@ connectDB();
 const app = express();
 const PORT = process.env.PORT || 5001;
 
-// --- CORS Configuration ---
+// ---  CORS Configuration ---
 const whitelist = [
-  "http://localhost:5173", // Your local dev
-  "https://mams-system.vercel.app", // Your live Vercel app
+  "http://localhost:5173", //  local dev
+  "https://mams-system.vercel.app", //  live Vercel app
 ];
 
 const corsOptions = {
@@ -38,11 +38,12 @@ const corsOptions = {
   },
 };
 
-// --- Core Middleware ---
+// 1. This handles the 'OPTIONS' preflight request
+app.options("*", cors(corsOptions));
 
-// Enable Cross-Origin Resource Sharing (CORS)
-// This allows your React frontend to make requests to this backend
+// 2. This handles all other requests (GET, POST, etc.)
 app.use(cors(corsOptions));
+// --- End CORS ---
 
 // Body Parsers
 // Allow the server to accept JSON data in request bodies
