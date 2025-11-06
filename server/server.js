@@ -26,7 +26,7 @@ const PORT = process.env.PORT || 5001;
 const whitelist = [
   "http://localhost:5173",
   "https://mams-system.vercel.app",
-  "https://mams-system-7fw7tyfiy-parths-projects-f26bb095.vercel.app",
+  "https://mams-system-e2kafj2nr-parths-projects-f26bb095.vercel.app",
 ];
 
 const corsOptions = {
