@@ -1,0 +1,56 @@
+# /mams-system/.gitignore
+
+# General
+.DS_Store
+Thumbs.db
+*.log
+
+# -----------------
+# Server (Node.js)
+# -----------------
+
+# Dependencies
+/server/node_modules
+
+# Environment variables
+/server/.env
+
+# Logs
+/server/logs
+/server/npm-debug.log*
+/server/yarn-debug.log*
+/server/yarn-error.log*
+
+
+# -----------------
+# Client (Vite)
+# -----------------
+
+# Dependencies
+/client/node_modules
+
+# Build output
+/client/dist
+
+# Environment variables
+/client/.env
+/client/.env.*
+!/client/.env.example
+
+# Caches and logs
+/client/.vite-temp/
+/client/.eslintcache
+/client/npm-debug.log*
+/client/yarn-debug.log*
+/client/yarn-error.log*
+
+# -----------------
+# IDE / Editor
+# -----------------
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

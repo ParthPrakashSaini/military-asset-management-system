@@ -1,0 +1,10 @@
+/* /client/src/index.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Set a default background and text color for the whole app */
+body {
+  @apply bg-brand-light text-brand-secondary;
+}
