@@ -23,16 +23,17 @@ const app = express();
 const PORT = process.env.PORT || 5001;
 
 // --- 🔒 CORRECTED CORS Configuration ---
-const whitelist = [
-  "http://localhost:5173", // Your local dev
-  "https://mams-system.vercel.app", // Your live Vercel app (NO trailing slash)
-];
+const whitelist = ["http://localhost:5173", "https://mams-system.vercel.app"];
 
 const corsOptions = {
   origin: function (origin, callback) {
+    // --- Add this console.log for debugging ---
+    console.log("REQUEST ORIGIN:", origin);
+
     if (whitelist.indexOf(origin) !== -1 || !origin) {
       callback(null, true);
     } else {
+      // --- This is line 36 ---
       callback(new Error("Not allowed by CORS"));
     }
   },
