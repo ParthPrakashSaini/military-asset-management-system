@@ -23,7 +23,11 @@ const app = express();
 const PORT = process.env.PORT || 5001;
 
 // --- 🔒 CORRECTED CORS Configuration ---
-const whitelist = ["http://localhost:5173", "https://mams-system.vercel.app"];
+const whitelist = [
+  "http://localhost:5173",
+  "https://mams-system.vercel.app",
+  "https://mams-system-7fw7tyfiy-parths-projects-f26bb095.vercel.app",
+];
 
 const corsOptions = {
   origin: function (origin, callback) {
