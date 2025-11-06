@@ -22,10 +22,10 @@ connectDB();
 const app = express();
 const PORT = process.env.PORT || 5001;
 
-// ---  CORS Configuration ---
+// --- 🔒 CORRECTED CORS Configuration ---
 const whitelist = [
-  "http://localhost:5173", //  local dev
-  "https://mams-system.vercel.app", //  live Vercel app
+  "http://localhost:5173", // Your local dev
+  "https://mams-system.vercel.app", // Your live Vercel app (NO trailing slash)
 ];
 
 const corsOptions = {
@@ -38,20 +38,17 @@ const corsOptions = {
   },
 };
 
-// 1. This handles the 'OPTIONS' preflight request
-app.options("*", cors(corsOptions));
-
-// 2. This handles all other requests (GET, POST, etc.)
+// This ONE line handles all CORS requests (including preflight 'OPTIONS')
 app.use(cors(corsOptions));
 // --- End CORS ---
 
-// Body Parsers
-// Allow the server to accept JSON data in request bodies
+// --- Core Middleware ---
+// Body Parsers (MUST come AFTER CORS)
 app.use(express.json());
-// Allow the server to accept URL-encoded data
 app.use(express.urlencoded({ extended: true }));
 
 // --- API Routes ---
+// (MUST come AFTER CORS and body parsers)
 app.use("/api/auth", authRoutes);
 app.use("/api/bases", baseRoutes);
 app.use("/api/assets", assetRoutes);
