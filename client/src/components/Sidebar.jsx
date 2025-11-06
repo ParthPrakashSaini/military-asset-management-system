@@ -105,12 +105,12 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
         - On desktop (md:): 'relative', 'translate-x-0'
       */}
       <div
-        className={`flex flex-col h-screen w-64 bg-brand-dark text-white transition-transform duration-300 ease-in-out
+        className={`flex flex-col h-screen w-64 bg-brand-dark bg-topography-pattern text-white transition-transform duration-300 ease-in-out
                     fixed inset-y-0 left-0 z-50 md:relative md:translate-x-0
                     ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}`}
       >
         {/* Header w/ Close button (Mobile) */}
-        <div className="flex items-center justify-between h-20 px-4 border-b border-gray-700">
+        <div className="flex items-center justify-between h-20 px-4 border-b border-green-600">
           <h1 className="text-2xl font-bold">MAMS</h1>
           <button
             onClick={closeSidebar}

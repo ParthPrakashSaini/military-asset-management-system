@@ -90,9 +90,9 @@ const Dashboard = () => {
           <h2 className="text-xl font-semibold text-brand-dark">
             Asset Allocation
           </h2>
-          <p className="mt-4 text-gray-500">
+          {/* <p className="mt-4 text-gray-500">
             (Charts and graphs coming soon...)
-          </p>
+          </p> */}
           {/*  */}
         </div>
       </div>
