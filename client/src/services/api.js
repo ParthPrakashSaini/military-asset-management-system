@@ -5,7 +5,7 @@ import { useAuthStore } from "../store/authStore";
 
 // Create an Axios instance with the backend's base URL
 const api = axios.create({
-  baseURL: "http://localhost:5001/api", // Your backend server
+  baseURL: import.meta.env.VITE_API_URL, // Your backend server
 });
 
 // This is an "interceptor" - a function that runs before every single request
