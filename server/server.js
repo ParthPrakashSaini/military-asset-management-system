@@ -22,11 +22,27 @@ connectDB();
 const app = express();
 const PORT = process.env.PORT || 5001;
 
+// --- CORS Configuration ---
+const whitelist = [
+  "http://localhost:5173", // Your local dev
+  "https://mams-system.vercel.app", // Your live Vercel app
+];
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+};
+
 // --- Core Middleware ---
 
 // Enable Cross-Origin Resource Sharing (CORS)
 // This allows your React frontend to make requests to this backend
-app.use(cors());
+app.use(cors(corsOptions));
 
 // Body Parsers
 // Allow the server to accept JSON data in request bodies
